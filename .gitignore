@@ -1,0 +1,140 @@
+# Environment variables (contains API keys!)
+.env
+*.env
+!.env.example
+
+# Database files
+*.db
+*.sqlite
+*.sqlite3
+data/
+
+# ===================================
+# PYTHON
+# ===================================
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual environments
+venv/
+env/
+ENV/
+.venv
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Unit test / coverage
+htmlcov/
+.tox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+.pytest_cache/
+
+# ===================================
+# IDE / EDITORS
+# ===================================
+
+# VSCode
+.vscode/
+*.code-workspace
+
+# PyCharm
+.idea/
+*.iml
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Vim
+*.swp
+*.swo
+*~
+
+# ===================================
+# OPERATING SYSTEMS
+# ===================================
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Linux
+*~
+.directory
+
+# ===================================
+# LOGS
+# ===================================
+
+*.log
+logs/
+*.log.*
+
+# ===================================
+# TEMPORARY FILES
+# ===================================
+
+tmp/
+temp/
+*.tmp
+*.bak
+*.swp
+
+# ===================================
+# NODE (if using Node tools)
+# ===================================
+
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# ===================================
+# MISC
+# ===================================
+
+# Backup files
+*.backup
+*.orig
+
+# Compressed files
+*.zip
+*.tar.gz
+*.rar
