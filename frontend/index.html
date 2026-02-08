@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CineMaRM - AI Movie Recommender</title>
+    <meta name="description" content="Discover your next favorite movie with AI-powered recommendations">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-background"></div>
+        <div class="hero-overlay"></div>
+        
+        <nav class="navbar">
+            <div class="container">
+                <div class="nav-content">
+                    <div class="logo">
+                        <span class="logo-icon">🎬</span>
+                        <span class="logo-text">CineMaRM</span>
+                    </div>
+                    <div class="nav-links">
+                        <a href="#" class="nav-link active" data-section="home">Home</a>
+                        <a href="#" class="nav-link" data-section="trending">Trending</a>
+                        <a href="#" class="nav-link" data-section="top-rated">Top Rated</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        
+        <div class="hero-content">
+            <div class="container">
+                <h1 class="hero-title">
+                    Find Your Perfect
+                    <span class="gradient-text">Movie Match</span>
+                </h1>
+                <p class="hero-subtitle">
+                    AI-powered recommendations based on what you love
+                </p>
+                
+                <!-- Search Bar -->
+                <div class="search-container">
+                    <div class="search-box">
+                        <svg class="search-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M9 17A8 8 0 1 0 9 1a8 8 0 0 0 0 16zM19 19l-4.35-4.35" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <input 
+                            type="text" 
+                            id="searchInput" 
+                            class="search-input" 
+                            placeholder="Search for a movie you love..."
+                            autocomplete="off"
+                        >
+                        <button id="searchButton" class="search-button">Search</button>
+                    </div>
+                    <div id="searchResults" class="search-results"></div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            
+            <!-- Stats Bar -->
+            <div id="statsBar" class="stats-bar">
+                <div class="stat-item">
+                    <span class="stat-icon">🎬</span>
+                    <div class="stat-info">
+                        <span class="stat-value" id="totalMovies">0</span>
+                        <span class="stat-label">Movies</span>
+                    </div>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-icon">🤖</span>
+                    <div class="stat-info">
+                        <span class="stat-value">AI</span>
+                        <span class="stat-label">Powered</span>
+                    </div>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-icon">⚡</span>
+                    <div class="stat-info">
+                        <span class="stat-value">Instant</span>
+                        <span class="stat-label">Results</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Selected Movie Section -->
+            <section id="selectedMovieSection" class="section selected-movie-section hidden">
+                <div class="section-header">
+                    <h2 class="section-title">Your Selection</h2>
+                </div>
+                <div id="selectedMovie" class="selected-movie-card"></div>
+            </section>
+
+            <!-- Recommendations Section -->
+            <section id="recommendationsSection" class="section hidden">
+                <div class="section-header">
+                    <h2 class="section-title">
+                        <span class="gradient-text">Recommended</span> For You
+                    </h2>
+                    <p class="section-subtitle">Based on AI content analysis</p>
+                </div>
+                <div id="recommendationsGrid" class="movies-grid"></div>
+            </section>
+
+            <!-- Trending Section -->
+            <section id="trendingSection" class="section">
+                <div class="section-header">
+                    <h2 class="section-title">
+                        🔥 Trending Now
+                    </h2>
+                </div>
+                <div id="trendingGrid" class="movies-grid"></div>
+            </section>
+
+            <!-- Top Rated Section -->
+            <section id="topRatedSection" class="section hidden">
+                <div class="section-header">
+                    <h2 class="section-title">
+                        ⭐ Top Rated
+                    </h2>
+                </div>
+                <div id="topRatedGrid" class="movies-grid"></div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Movie Modal -->
+    <div id="movieModal" class="modal">
+        <div class="modal-backdrop"></div>
+        <div class="modal-content">
+            <button class="modal-close" id="modalClose">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+            </button>
+            <div id="modalBody" class="modal-body"></div>
+        </div>
+    </div>
+
+    <!-- Loading Spinner -->
+    <div id="loadingSpinner" class="loading-spinner hidden">
+        <div class="spinner"></div>
+        <p>Finding perfect matches...</p>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p class="footer-text">
+                Powered by AI & TMDb • Built with ❤️ by CineMaRM
+            </p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/api.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
